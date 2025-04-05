@@ -26,10 +26,14 @@ public class AopdemoApplication {
 	private void demoTheBeforeAdvice(AccountDAO theAccountDAO, MembershipDAO theMembershipDAO) {
 
 		// call the business method
-		theAccountDAO.addAccount();
+		Account myAccount = new Account();
+		theAccountDAO.addAccount(myAccount, true);
+		theAccountDAO.doWork();
 
 		// call the membership business method
-		theMembershipDAO.addAccount();
+		theMembershipDAO.addSillyMember();
+		theMembershipDAO.goToSleep();
+
 
 //		// do it again!
 //		System.out.println("\n let's call it again:\n");
